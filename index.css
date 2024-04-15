@@ -1,0 +1,122 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/* Prevent font size inflation */
+html {
+	-moz-text-size-adjust: none;
+	-webkit-text-size-adjust: none;
+	text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+	margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'],
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+/* Set core body defaults */
+body {
+	min-height: 100vh;
+	line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+	line-height: 1.1;
+}
+
+/* Make images easier to work with */
+svg,
+img,
+picture {
+	max-width: 100%;
+	display: block;
+}
+
+:root {
+	/*PRIMARY*/
+	--Light-Cyan: hsl(193, 38%, 86%);
+	--Neon-Green: hsl(150, 100%, 66%);
+
+	/*NEUTRAL*/
+	--Grayish-Blue: hsl(217, 19%, 38%);
+	--Dark-Grayish-Blue: hsl(217, 19%, 24%);
+	--Dark-Blue: hsl(218, 23%, 16%);
+
+	--fs-quote: 28px;
+}
+
+body {
+	font-family: 'Manrope', sans-serif;
+	background-color: var(--Dark-Blue);
+	min-height: 100vh;
+	display: flex;
+}
+
+main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--Dark-Grayish-Blue);
+	max-width: 500px;
+	margin: auto;
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+main > * {
+	padding: 1rem;
+}
+
+span {
+	display: block;
+	color: var(--Neon-Green);
+}
+
+h1 {
+	color: var(--Light-Cyan);
+	font-size: var(--fs-quote);
+}
+
+.dice {
+	background-color: var(--Neon-Green);
+	padding: 0.8rem;
+	margin-bottom: -2.5rem;
+	clip-path: circle(50%);
+	cursor: pointer;
+}

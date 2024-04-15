@@ -1,26 +1,24 @@
-const id = document.getElementById(adviceNumber);
-const quote = document.getElementById(Quote);
-const dice = document.getElementById(Dice);
+const id = document.querySelector('#adviceNumber');
+const quote = document.querySelector('#Quote');
+const dice = document.querySelector('#Dice');
 
 async function fetchRandomAdvice() {
 	const response = await fetch('https://api.adviceslip.com/advice');
 	const data = await response.json();
 	console.log(data);
 	id.innerHTML = `${data.slip.id}`;
-	quote.innerHTML = `"${data.slip.advice}"`.catch((error) => {
-		console.error('Error fetching advice:', error);
-		return null;
-	});
+	quote.innerHTML = `"${data.slip.advice}"`;
+}
 
-	// Function to update the advice
+// Function to update the advice
 function updateAdvice() {
-    fetchRandomAdvice().then(advice => {
-        if (advice) {
-            id.innerHTML = `${data.slip.id}`
-            quote.innerHTML = `"${data.slip.advice}"`;
-        }
-    });
-};
+	fetchRandomAdvice().then((advice) => {
+		if (advice) {
+			id.innerHTML = `${data.slip.id}`;
+			quote.innerHTML = `"${data.slip.advice}"`;
+		}
+	});
+}
 
 // Initial advice loading
 updateAdvice();
